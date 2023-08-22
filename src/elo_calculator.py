@@ -46,7 +46,7 @@ class EloCalculator:
     def individual_diff(ratingA: int, ratingB: int, scoreDiff: int) -> int:
         # Calculate the expected score based on the ratings
         e = 1.0 / (1 + 10 ** ((ratingB - ratingA) / 400.0))
-        
+
         # Determine the actual score based on the score difference
         if scoreDiff > 0:
             s = 1.0
@@ -71,7 +71,7 @@ class EloCalculator:
 
         # Calculate the new rating difference
         p = round(k * (s - e))
-        
+
         # Ensure the rating does not become negative
         if ratingA + p < 0:
             return -ratingA
